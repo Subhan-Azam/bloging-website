@@ -1,0 +1,54 @@
+{
+  "id": "blog_hero_section",
+  "type": "SharedSlice",
+  "name": "BlogHeroSection",
+  "description": "BlogHeroSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "author": {
+          "type": "Text",
+          "config": {
+            "label": "Author",
+            "placeholder": ""
+          }
+        },
+        "date": {
+          "type": "Date",
+          "config": {
+            "label": "Date",
+            "placeholder": ""
+          }
+        },
+        "category": {
+          "type": "Text",
+          "config": {
+            "label": "Category",
+            "placeholder": ""
+          }
+        },
+        "read_time": {
+          "type": "Text",
+          "config": {
+            "label": "Read Time",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -25,7 +25,6 @@ export default async function Page() {
 
           <div className="flex justify-center mt-[50px] mb-[69px]">
             <Button
-              
               style="border border-[#01CFFF] text-[#01CFFF] rounded-[100px] w-[94px] h-[40px] font-[500] text-[11px] hover:bg-[#01CFFF] hover:text-black "
               title="View more"
             />

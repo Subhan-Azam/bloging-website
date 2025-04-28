@@ -17,7 +17,9 @@ const TextBlock: FC<TextBlockProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicRichText field={slice.primary.text} />
+      <div className="w-full max-w-[956px] mx-auto mb-[42px] px-5">
+        <PrismicRichText field={slice.primary.text} />
+      </div>
     </section>
   );
 };

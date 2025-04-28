@@ -76,7 +76,10 @@ interface BlogDocumentData {
 export type BlogDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<BlogDocumentData>, "blog", Lang>;
 
-type BlogthreadDocumentDataSlicesSlice = ImageBlockSlice;
+type BlogthreadDocumentDataSlicesSlice =
+  | TextBlockSlice
+  | BlogHeroSectionSlice
+  | ImageBlockSlice;
 
 /**
  * Content for BlogThread documents
@@ -255,6 +258,91 @@ export type BlogCardsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *BlogHeroSection → Default → Primary*
+ */
+export interface BlogHeroSectionSliceDefaultPrimary {
+  /**
+   * Title field in *BlogHeroSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_hero_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Author field in *BlogHeroSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_hero_section.default.primary.author
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author: prismic.KeyTextField;
+
+  /**
+   * Date field in *BlogHeroSection → Default → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_hero_section.default.primary.date
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date: prismic.DateField;
+
+  /**
+   * Category field in *BlogHeroSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_hero_section.default.primary.category
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  category: prismic.KeyTextField;
+
+  /**
+   * Read Time field in *BlogHeroSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_hero_section.default.primary.read_time
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  read_time: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for BlogHeroSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogHeroSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogHeroSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BlogHeroSection*
+ */
+type BlogHeroSectionSliceVariation = BlogHeroSectionSliceDefault;
+
+/**
+ * BlogHeroSection Shared Slice
+ *
+ * - **API ID**: `blog_hero_section`
+ * - **Description**: BlogHeroSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogHeroSectionSlice = prismic.SharedSlice<
+  "blog_hero_section",
+  BlogHeroSectionSliceVariation
+>;
+
+/**
  * Primary content in *HeroSection → Default → Primary*
  */
 export interface BlogHerosectionSliceDefaultPrimary {
@@ -310,33 +398,6 @@ export type BlogHerosectionSlice = prismic.SharedSlice<
 >;
 
 /**
- * Default variation for Image Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ImageSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  never
->;
-
-/**
- * Slice variation for *Image*
- */
-type ImageSliceVariation = ImageSliceDefault;
-
-/**
- * Image Shared Slice
- *
- * - **API ID**: `image`
- * - **Description**: Image
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ImageSlice = prismic.SharedSlice<"image", ImageSliceVariation>;
-
-/**
  * Primary content in *ImageBlock → Default → Primary*
  */
 export interface ImageBlockSliceDefaultPrimary {
@@ -382,41 +443,11 @@ export type ImageBlockSlice = prismic.SharedSlice<
 >;
 
 /**
- * Default variation for ImageBlog Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ImageBlogSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  never
->;
-
-/**
- * Slice variation for *ImageBlog*
- */
-type ImageBlogSliceVariation = ImageBlogSliceDefault;
-
-/**
- * ImageBlog Shared Slice
- *
- * - **API ID**: `image_blog`
- * - **Description**: ImageBlog
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ImageBlogSlice = prismic.SharedSlice<
-  "image_blog",
-  ImageBlogSliceVariation
->;
-
-/**
  * Primary content in *TextBlock → Default → Primary*
  */
 export interface TextBlockSliceDefaultPrimary {
   /**
-   * text field in *TextBlock → Default → Primary*
+   * Text field in *TextBlock → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -489,20 +520,18 @@ declare module "@prismicio/client" {
       BlogCardsSliceDefaultPrimary,
       BlogCardsSliceVariation,
       BlogCardsSliceDefault,
+      BlogHeroSectionSlice,
+      BlogHeroSectionSliceDefaultPrimary,
+      BlogHeroSectionSliceVariation,
+      BlogHeroSectionSliceDefault,
       BlogHerosectionSlice,
       BlogHerosectionSliceDefaultPrimary,
       BlogHerosectionSliceVariation,
       BlogHerosectionSliceDefault,
-      ImageSlice,
-      ImageSliceVariation,
-      ImageSliceDefault,
       ImageBlockSlice,
       ImageBlockSliceDefaultPrimary,
       ImageBlockSliceVariation,
       ImageBlockSliceDefault,
-      ImageBlogSlice,
-      ImageBlogSliceVariation,
-      ImageBlogSliceDefault,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,

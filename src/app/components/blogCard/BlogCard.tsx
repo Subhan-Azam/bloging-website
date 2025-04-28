@@ -58,10 +58,12 @@ const BlogCard = ({ key, data }: BlogCardProps) => {
         </motion.p>
 
         <div className=" flex justify-between mt-[20px]">
+          {/* <Link href={`/blogList/${data.blog_link}`}> */}
           <Button
             style="border border-[#01CFFF] text-[#01CFFF] rounded-[100px] w-[78px] h-[28px] font-[500] text-[11px] hover:bg-[#01CFFF] hover:text-black"
             title="Read more"
           />
+          {/* </Link> */}
 
           <motion.div
             className="flex items-center gap-[4px] text-[#FFFFFF]"

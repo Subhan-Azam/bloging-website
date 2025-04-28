@@ -1,0 +1,34 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "close",
+				"type": "Text"
+			},
+			"author": {
+				"__TYPE__": "FieldContent",
+				"value": "sit",
+				"type": "Text"
+			},
+			"date": {
+				"__TYPE__": "FieldContent",
+				"type": "Date",
+				"value": "2019-10-17"
+			},
+			"category": {
+				"__TYPE__": "FieldContent",
+				"value": "pure",
+				"type": "Text"
+			},
+			"read_time": {
+				"__TYPE__": "FieldContent",
+				"value": "process",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
