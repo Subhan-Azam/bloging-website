@@ -24,3 +24,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.text-block p{
+    color: #CCCCCC; 
+  }
+
+  .text-block a{
+    color: #CCCCCC;
+    text-decoration: underline;
+  }
+
+  .text-block strong{
+    color: #CCCCCC;
+    font-weight: bold;
+  }
