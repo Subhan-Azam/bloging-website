@@ -17,7 +17,7 @@ const BlogHerosection: FC<BlogHerosectionProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
     >
       <motion.div
-        className="max-w-[1005px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-[80px] md:mt-[120px] lg:mt-[143px] mb-[80px] md:mb-[150px] lg:mb-[204px]"
+        className="max-w-[1005px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-[60px] md:mt-[120px] lg:mt-[143px] mb-[80px] md:mb-[150px] lg:mb-[204px]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

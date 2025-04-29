@@ -2,19 +2,21 @@
 import React from "react";
 import { HiClock } from "react-icons/hi";
 import { motion } from "framer-motion";
-import Button from "./Button";
+import Button from "../button/Button";
 import Image from "next/image";
 import {
   BlogCardsSliceDefaultPrimaryCardsItem,
   Simplify,
 } from "../../../../prismicio-types";
+import Link from "next/link";
 
 type BlogCardProps = {
   key: number;
   data: Simplify<BlogCardsSliceDefaultPrimaryCardsItem>;
+  path: string;
 };
 
-const BlogCard = ({ key, data }: BlogCardProps) => {
+const BlogCard = ({ path, key, data }: BlogCardProps) => {
   return (
     <motion.div
       key={key}
@@ -58,12 +60,12 @@ const BlogCard = ({ key, data }: BlogCardProps) => {
         </motion.p>
 
         <div className=" flex justify-between mt-[20px]">
-          {/* <Link href={`/blogList/${data.blog_link}`}> */}
-          <Button
-            style="border border-[#01CFFF] text-[#01CFFF] rounded-[100px] w-[78px] h-[28px] font-[500] text-[11px] hover:bg-[#01CFFF] hover:text-black"
-            title="Read more"
-          />
-          {/* </Link> */}
+          <Link href={path}>
+            <Button
+              style="border border-[#01CFFF] text-[#01CFFF] rounded-[100px] w-[78px] h-[28px] font-[500] text-[11px] hover:bg-[#01CFFF] hover:text-black transition-all ease-in-out duration-300"
+              title="Read more"
+            />
+          </Link>
 
           <motion.div
             className="flex items-center gap-[4px] text-[#FFFFFF]"

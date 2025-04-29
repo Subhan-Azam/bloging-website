@@ -5,7 +5,6 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import Navbar from "@/app/components/navbar/Navbar";
 import Footer from "@/app/components/footer/Footer";
 
 type Params = { uid: string };
@@ -18,7 +17,6 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   return (
     <>
       <div className="bg-[#130D29]">
-        <Navbar />
         <SliceZone slices={page.data.slices} components={components} />
         <Footer />
       </div>

@@ -38,7 +38,6 @@ interface NavLinkProps {
 }
 
 const NavLink = ({ title, path, mobile = false, onClick }: NavLinkProps) => {
-  // Desktop styling (unchanged from your original)
   const desktopClasses = `
     px-[13px] py-[9px] rounded-[25px] text-[#FFFFFF] 
     hover:text-black hover:bg-[#01CFFF]/80 
@@ -47,7 +46,6 @@ const NavLink = ({ title, path, mobile = false, onClick }: NavLinkProps) => {
     relative overflow-hidden
   `;
 
-  // Mobile styling (simplified version)
   const mobileClasses = `
     block w-full py-3 px-4 text-white text-center
     hover:bg-[#01CFFF] hover:text-black

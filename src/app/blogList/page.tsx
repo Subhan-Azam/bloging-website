@@ -5,9 +5,8 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
-import Button from "../components/blogCard/Button";
+import Button from "../components/button/Button";
 
 export default async function Page() {
   const client = createClient();
@@ -19,8 +18,6 @@ export default async function Page() {
         <div className="absolute top-50 -right-40 w-96 h-56 bg-[#0964B1] rounded-full filter blur-[55px] opacity-80 -rotate-[35deg]"></div>
 
         <div className="relative z-10">
-          <Navbar />
-
           <SliceZone slices={page.data.slices} components={components} />
 
           <div className="flex justify-center mt-[50px] mb-[69px]">
