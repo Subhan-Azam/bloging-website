@@ -1,68 +1,16 @@
-// import { FC } from "react";
-// import { Content } from "@prismicio/client";
-// import { SliceComponentProps } from "@prismicio/react";
-// import { FaUserCircle } from "react-icons/fa";
-// import Input from "@/app/components/input/Input";
-
-// /**
-//  * Props for `BlogHeroSection`.
-//  */
-// export type BlogHeroSectionProps =
-//   SliceComponentProps<Content.BlogHeroSectionSlice>;
-
-// /**
-//  * Component for "BlogHeroSection" Slices.
-//  */
-// const BlogHeroSection: FC<BlogHeroSectionProps> = ({ slice }) => {
-//   return (
-//     <section
-//       data-slice-type={slice.slice_type}
-//       data-slice-variation={slice.variation}
-//     >
-//       <div className="mt-[61px] mb-[50px] container mx-auto px-5">
-//         <div className="flex justify-end mb-[26px]">
-//           <Input style="md:w-[316px] w-full" />
-//         </div>
-//         <h1 className="text-[40px] font-bold">{slice.primary.title}</h1>
-//         <div className="flex gap-[4px] mt-[20px]">
-//           <div className="w-[336px] h-[40px] rounded-[16px] flex justify-center items-center gap-2 text-[16px] font-normal text-[#B7B7B7] bg-gradient-to-t from-[#FFFEFE66] to-[#FFFFFF14]">
-//             <FaUserCircle className="text-[22px]" />
-//             <span>
-//               {slice.primary.author} | {slice.primary.date}
-//             </span>
-//           </div>
-//           <div className="w-[116px] h-[40px] rounded-[16px] flex justify-center items-center bg-gradient-to-t from-[#FFFEFE66] to-[#FFFFFF14]">
-//             {slice.primary.category}
-//           </div>
-//           <div className="w-[113px] h-[40px] rounded-[16px] flex justify-center items-center bg-gradient-to-t from-[#FFFEFE66] to-[#FFFFFF14]">
-//             {slice.primary.read_time}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default BlogHeroSection;
-
 "use client";
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { FaUserCircle } from "react-icons/fa";
-import Input from "@/app/components/input/Input";
+import Input from "@/components/input/Input";
 import { motion } from "framer-motion";
 import { MdAccessTime } from "react-icons/md";
 
-/**
- * Props for `BlogHeroSection`.
- */
+
 export type BlogHeroSectionProps =
   SliceComponentProps<Content.BlogHeroSectionSlice>;
 
-/**
- * Component for "BlogHeroSection" Slices.
- */
 const BlogHeroSection: FC<BlogHeroSectionProps> = ({ slice }) => {
   const containerVariants = {
     hidden: { opacity: 0 },

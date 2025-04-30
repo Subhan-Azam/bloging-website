@@ -5,8 +5,8 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import Footer from "../components/footer/Footer";
-import Button from "../components/button/Button";
+import Footer from "@/components/footer/Footer";
+import Button from "@/components/button/Button";
 
 export default async function Page() {
   const client = createClient();

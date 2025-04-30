@@ -1,0 +1,37 @@
+{
+  "format": "custom",
+  "id": "navbar",
+  "label": "Navbar",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "nav_link": {
+        "type": "Link",
+        "config": {
+          "label": "Nav Link",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": true
+        }
+      },
+      "right_cta": {
+        "type": "Text",
+        "config": {
+          "label": "Right CTA",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

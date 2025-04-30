@@ -5,7 +5,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { motion } from "framer-motion";
-import Input from "@/app/components/input/Input";
+import Input from "@/components/input/Input";
 
 export type BlogHerosectionProps =
   SliceComponentProps<Content.BlogHerosectionSlice>;
@@ -51,8 +51,8 @@ const BlogHerosection: FC<BlogHerosectionProps> = ({ slice }) => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className="font-[500]">All Categories</span>
-            <RiArrowDropDownLine className="text-[30px]" />
+            <span className="font-[500] text-black">All Categories</span>
+            <RiArrowDropDownLine className="text-[30px] text-black" />
           </motion.button>
 
           <Input style="md:w-[662px] w-full" />

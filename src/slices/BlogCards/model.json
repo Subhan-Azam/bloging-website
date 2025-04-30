@@ -53,6 +53,13 @@
                   "label": "Est reading time",
                   "placeholder": ""
                 }
+              },
+              "uid": {
+                "type": "Text",
+                "config": {
+                  "label": "uid",
+                  "placeholder": ""
+                }
               }
             }
           }

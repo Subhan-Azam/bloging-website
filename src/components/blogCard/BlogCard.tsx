@@ -4,19 +4,18 @@ import { HiClock } from "react-icons/hi";
 import { motion } from "framer-motion";
 import Button from "../button/Button";
 import Image from "next/image";
+import Link from "next/link";
 import {
   BlogCardsSliceDefaultPrimaryCardsItem,
   Simplify,
-} from "../../../../prismicio-types";
-import Link from "next/link";
+} from "../../../prismicio-types";
 
-type BlogCardProps = {
+interface BlogCardProps {
   key: number;
   data: Simplify<BlogCardsSliceDefaultPrimaryCardsItem>;
-  path: string;
-};
+}
 
-const BlogCard = ({ path, key, data }: BlogCardProps) => {
+const BlogCard = ({ key, data }: BlogCardProps) => {
   return (
     <motion.div
       key={key}
@@ -60,7 +59,7 @@ const BlogCard = ({ path, key, data }: BlogCardProps) => {
         </motion.p>
 
         <div className=" flex justify-between mt-[20px]">
-          <Link href={path}>
+          <Link href={`blogList/${data.uid}` || "#"}>
             <Button
               style="border border-[#01CFFF] text-[#01CFFF] rounded-[100px] w-[78px] h-[28px] font-[500] text-[11px] hover:bg-[#01CFFF] hover:text-black transition-all ease-in-out duration-300"
               title="Read more"

@@ -155,7 +155,66 @@ export type BlogthreadDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = BlogDocument | BlogthreadDocument;
+/**
+ * Content for Navbar documents
+ */
+interface NavbarDocumentData {
+  /**
+   * logo field in *Navbar*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Nav Link field in *Navbar*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.nav_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  nav_link: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+
+  /**
+   * Right CTA field in *Navbar*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.right_cta
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  right_cta: prismic.KeyTextField;
+}
+
+/**
+ * Navbar document from Prismic
+ *
+ * - **API ID**: `navbar`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavbarDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NavbarDocumentData>,
+    "navbar",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | BlogDocument
+  | BlogthreadDocument
+  | NavbarDocument;
 
 /**
  * Item in *BlogCards → Default → Primary → Cards*
@@ -200,6 +259,16 @@ export interface BlogCardsSliceDefaultPrimaryCardsItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   est_reading_time: prismic.KeyTextField;
+
+  /**
+   * uid field in *BlogCards → Default → Primary → Cards*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_cards.default.primary.cards[].uid
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  uid: prismic.KeyTextField;
 }
 
 /**
@@ -514,6 +583,8 @@ declare module "@prismicio/client" {
       BlogthreadDocument,
       BlogthreadDocumentData,
       BlogthreadDocumentDataSlicesSlice,
+      NavbarDocument,
+      NavbarDocumentData,
       AllDocumentTypes,
       BlogCardsSlice,
       BlogCardsSliceDefaultPrimaryCardsItem,

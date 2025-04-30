@@ -5,7 +5,7 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import Footer from "@/app/components/footer/Footer";
+import Footer from "@/components/footer/Footer";
 
 type Params = { uid: string };
 
