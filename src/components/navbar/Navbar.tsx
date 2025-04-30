@@ -63,14 +63,14 @@ const NavClient = ({ navbar }: NavClientProps) => {
       </nav>
 
       <div
-        className={`md:hidden bg-[#0A192F] w-full transition-all duration-300 ease-in-out ${isOpen ? "mt-[68px] h-auto opacity-100" : "h-0 opacity-0 overflow-hidden"}`}
+        className={`md:hidden bg-[#0A192F] w-full transition-all duration-300 ease-in-out ${isOpen ? "h-auto opacity-100" : "h-0 opacity-0 overflow-hidden"}`}
       >
         {isOpen && (
           <ul className="flex flex-col items-center py-4">
             {nav_link?.map((link, i) => (
-              <li key={i} className="w-full text-center">
+              <div key={i} className="w-full text-center">
                 <NavLink link={link} mobile onClick={() => setIsOpen(false)} />
-              </li>
+              </div>
             ))}
             <li className="w-full mt-4 px-4">
               <Button
